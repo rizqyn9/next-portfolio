@@ -1,6 +1,8 @@
 import React, {useEffect, useRef} from 'react'
 import FigureGallery from './figureGallery'
-import WorksData from './worksData'
+import {} from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
+
 const Work = () => {
     const scroller = useRef()
     useEffect(()=> {
@@ -26,12 +28,11 @@ const Work = () => {
                     <div className="content">
                         <div className="gallery">
                             <div className="gallery__text"><span className="gallery__text-inner" data-scroll data-scroll-speed="3">2020</span><span data-scroll data-scroll-speed="1" className="gallery__text-inner">2021</span></div>
-                            {
-                                WorksData.map((val,i) => {
-                                    return <FigureGallery Image={val.Image} Title={val.Title} Index={i+1} Tags={val.Tags}/>
-                                })
-                            }
-                            <div className="gallery__text"><span className="gallery__text-inner" data-scroll data-scroll-speed="3">R -</span><span data-scroll data-scroll-speed="1" className="gallery__text-inner">Dev</span></div>
+                            <FigureGallery Image="/works/4.png" Title="Test1" Index='1' Tags={["haha", "nodejs", "php"]}/>
+                            <FigureGallery Image="/works/1.png" Title="Test1" Index='1' Tags={["haha", "nodejs", "php"]}/>
+                            <FigureGallery Image="/works/2.png" Title="Test1" Index='1' Tags={["haha", "nodejs", "php"]}/>
+                            <FigureGallery Image="/works/2.png" Title="Test1" Index='1' Tags={["haha", "nodejs", "php"]}/>
+                            <div className="gallery__text"><span className="gallery__text-inner" data-scroll data-scroll-speed="3">Deasil</span><span data-scroll data-scroll-speed="1" className="gallery__text-inner">Zetetic</span></div>
                         </div>
                     </div>
                 </div>
