@@ -1,0 +1,25 @@
+body{
+    // cursor: none;
+}
+.cursor {
+    width: 5rem;
+    height: 5rem;
+    border: 3px solid $color2;
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none !important;
+	z-index: 200;
+    background-color: transparent;
+}
+
+.cursor-small {
+    z-index: 200;
+    pointer-events: none !important;
+    width: .5rem;
+    height: .5rem;
+    top: 0;
+    left: 0;
+    background-color: cyan;
+    position: absolute;
+}

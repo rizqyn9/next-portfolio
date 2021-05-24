@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import MousContext from '../../components/cursor/MouseContext'
 
 const Home = () => {
+    const {type, setType} = useContext(MousContext)
     useEffect(()=> {
         console.log("state");
     }, [])
-
 
     return(
         <main className="home-container">
@@ -14,6 +15,7 @@ const Home = () => {
                     <div className="title _title">Hello</div>
                     <div className="title _title">I'm</div>
                     <div className="title _title">Rizqy</div>
+                    <div>{type}</div>
                 </div>
                 <div className="contents-container" >
                     <div className="text line1" ><span className="full-stack">Full-Stack</span> web development</div>

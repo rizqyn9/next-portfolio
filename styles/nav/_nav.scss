@@ -22,7 +22,7 @@ nav {
         width: $width_nav;
         height: $width_nav;
         transition: all 3s;
-        cursor: pointer;
+        // cursor: none;
         pointer-events: all;
         
         & > * {
