@@ -77,9 +77,9 @@ const Cursor = () => {
                 LargeAnim.current = gsap.to(CursorLarge.current, {
                     background:'red',
                     borderRadius: "0",
-                    x : positionRef.current.mouseX - SetLarge.current.x,
-                    y : positionRef.current.mouseY - SetLarge.current.y,
-                    paused:true
+                    // x : positionRef.current.mouseX - SetLarge.current.x,
+                    // y : positionRef.current.mouseY - SetLarge.current.y,
+                    paused:true,
                 })
                 LargeAnim.current.play()
                 SmallAnim.current.play()
@@ -97,7 +97,8 @@ const Cursor = () => {
                     borderRadius: "50%",
                     x : positionRef.current.mouseX - SetLarge.current.x,
                     y : positionRef.current.mouseY - SetLarge.current.y,
-                    paused:true
+                    paused:true,
+                    delay:.01
                 })
                 LargeAnim.current.play()
                 SmallAnim.current.play()
