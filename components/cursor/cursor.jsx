@@ -26,12 +26,12 @@ const Cursor = () => {
         key: 1
       });
 
-      // ! Set Box Bounding Cursor
-      useEffect(() => {
-          SetSmall.current.x = CursorSmall.current.clientWidth /2
-          SetSmall.current.y = CursorSmall.current.clientHeight / 2
-          SetLarge.current.x = CursorLarge.current.clientWidth / 2
-          SetLarge.current.y = CursorLarge.current.clientHeight / 2
+    // ! Set Box Bounding Cursor
+    useEffect(() => {
+        SetSmall.current.x = CursorSmall.current.clientWidth /2
+        SetSmall.current.y = CursorSmall.current.clientHeight / 2
+        SetLarge.current.x = CursorLarge.current.clientWidth / 2
+        SetLarge.current.y = CursorLarge.current.clientHeight / 2
 
     }, [])
 
@@ -42,9 +42,6 @@ const Cursor = () => {
         }
         document.addEventListener('mousemove', updatePos)
         document.addEventListener('pointerdown', () => {
-            console.log('====================================');
-            console.log("click");
-            console.log('====================================');
             LargeAnim.current = gsap.to(CursorLarge.current , {
                 background:"red",
                 paused:true
@@ -64,6 +61,9 @@ const Cursor = () => {
 
     // ! Cursor state
     useEffect(() => {
+        console.log('====================================');
+        console.log("Render Cursor");
+        console.log('====================================');
         const render = () => {
             if(type === "nav"){
                 SmallAnim.current = gsap.to(CursorSmall.current, {
