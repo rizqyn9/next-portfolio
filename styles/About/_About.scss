@@ -12,7 +12,7 @@
     // background-color: white;
 
     .about-content-container{
-        padding-left: 3rem;
+        padding-left: 5rem;
         height: 100vh !important;
         display: flex;
         flex-direction: column;
@@ -21,23 +21,21 @@
         align-items: flex-start;
 
         .about-contents{
-            font-size: smaller;
-            font-weight: 300;
         }
     }
     .globe-container{
-        background-color: red;
         flex: 1;
+        height: 75vh;
     }
 
     .title{
         display: flex;
     }
-    // .line-rev{
-    //     overflow: hidden;
-    //     height: max-content;
-    // }
-    // .line{
-    //     display: inline-block;        
-    // }
+    .line-rev{
+        overflow: hidden;
+        height: max-content;
+    }
+    .line{
+        display: inline-block;        
+    }
 }
