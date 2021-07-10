@@ -1,38 +1,41 @@
 .home-container{
-    flex-grow: 1;
+    flex: 1;
     height: 100vh;
-    // background: wheat;
+    align-self: stretch;
+    // background: darkblue;
     color: $color2;
     font-family: $fontAlegreya;
     position: relative;
     font-size: 2rem;
     font-weight: 900;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    .home-content-container{
-        flex-direction: column;
-        letter-spacing: .1rem;
-        margin-left: 4.5rem;
-        // background-color: red;
-        display: flex;
-        width: 90%;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
 
-        .home-title {
-            display: flex;
-            font-size: 4rem;
-            .title{
-                margin-right: .7rem;
-            }
-        }
-        .contents-container {
-            font-size: 2.5rem;
+    .home-title-container{
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5rem;
+        // background-color: red;
+    }
+    
+    .svg-container{
+        flex: 1 1 auto;
+        // background-color: pink;
+        display: flex;
+        justify-content: center;
+    }
+    .home-title {
+        display: flex;
+        font-size: 4rem;
+        .title{
+            margin-right: .7rem;
         }
     }
+    .contents-container {
+        font-size: 2.5rem;
+    }
+}
     .svg-container{
         // background-color: blue;
         width: 35vw;
@@ -49,7 +52,6 @@
         font-size: 7rem;
         letter-spacing: .5rem;
     }
-}
 
 .full-stack{
     font-size: 4rem;
