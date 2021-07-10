@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     // {
     //     Title : "Title1",
     //     Image : "/works/3.png",
@@ -21,4 +21,26 @@ const data = [
     }
 ]
 
-export default data
+export const skill = [
+    "WebGL",
+    "html5",
+    "canvas",
+    "Three.js",
+    "Node JS",
+    "Express JS",
+    "Bootsrap",
+    "SQL",
+    "NoSQL",
+    "npm",
+    "SASS",
+    "JQuery",
+    "CSS",
+    "React JS",
+    "Git",
+    "Javascript",
+    "C#",
+    "Python",
+    "C++",
+    "Next JS"
+]
+

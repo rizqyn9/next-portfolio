@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react'
-import {gsap, Power2, Power0} from 'gsap'
+import { motion } from 'framer-motion';
+import Title from '../components/animPart/Title';
 
 const Contact = () => {
     const [textarea, setTextarea] = useState(false);
@@ -9,26 +10,12 @@ const Contact = () => {
 
 
     useEffect(() => {
-        let item = Array.of(document.querySelectorAll("navigation-item"))
-
-        gsap.from(socialContainer.current, .5,{
-            opacity:0,
-            x:'50vw',
-            ease: Power0.easeOut
-        })
-        gsap.from('.navigation-item span' , {
-            // x: '2vw',
-            y: '-15vh',
-            rotate: '5deg',
-            stagger : .1,
-            delay:.5
-        })
     }, []);
 
     return (
         <main>
             <div className="form-container">
-                <div className="__title">Contact</div>
+                <Title className="__title">Contact</Title>
                 <div className="item-container">
                     <div className="input-container">
                         <div className="input_wrap">

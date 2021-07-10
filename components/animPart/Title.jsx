@@ -28,7 +28,7 @@ const Title = (props) => {
                             variants = {{
                                 hidden : {
                                     opacity : 0,
-                                    minWidth : '.5em',
+                                    minWidth : '.4em',
                                     display : 'inline-block',
                                     scale : 0
                                 },

@@ -1,144 +1,64 @@
 import React, {useRef, useContext, useEffect, useState} from 'react'
-import {gsap, Power1} from 'gsap'
 import MouseContext from '../cursor/MouseContext'
+import { motion, useMotionValue, useSpring,  } from 'framer-motion'
 
 const Cursor = () => {
     const {type, eventProp} = useContext(MouseContext)
-    const CursorSmall = useRef()
-    const CursorLarge = useRef()
-    const LargeAnim = useRef()
-    const SmallAnim = useRef()
-    const SetSmall = useRef({
-        x : 0,
-        y : 0
-    })
-    const SetLarge = useRef({
-        x : 0,
-        y : 0,
-    })
-    const positionRef = useRef({
-        mouseX: 0,
-        mouseY: 0,
-        destinationX: 0,
-        destinationY: 0,
-        distanceX: 0,
-        distanceY: 0,
-        key: 1
-      });
+    const smallCursor = useRef()
+    const largeCursor = useRef()
 
-    // ! Set Box Bounding Cursor
-    useEffect(() => {
-        SetSmall.current.x = CursorSmall.current.clientWidth /2
-        SetSmall.current.y = CursorSmall.current.clientHeight / 2
-        SetLarge.current.x = CursorLarge.current.clientWidth / 2
-        SetLarge.current.y = CursorLarge.current.clientHeight / 2
+    const cursorX = useMotionValue(-100);
+    const cursorY = useMotionValue(-100);
+    const cursorXLarge = useMotionValue(100);
+    const cursorYLarge = useMotionValue(100);
 
-    }, [])
+    const springConfig = { damping: 25, stiffness: 700 };
+    const cursorXSpring = useSpring(cursorXLarge, springConfig);
+    const cursorYSpring = useSpring(cursorYLarge, springConfig);
 
     useEffect(() => {
-        const updatePos = (e) => {
-            positionRef.current.mouseX = e.clientX
-            positionRef.current.mouseY = e.clientY
+        const largeSize = {
+            x : largeCursor.current.offsetWidth,
+            y : largeCursor.current.offsetWidth
         }
-        document.addEventListener('mousemove', updatePos)
-        document.addEventListener('pointerdown', () => {
-            LargeAnim.current = gsap.to(CursorLarge.current , {
-                background:"red",
-                paused:true
-            })
-            LargeAnim.current.play()
-        })
-        document.addEventListener('mousedown', () => {
-            gsap.to(CursorLarge.current, {
-                background:"blue"
-            })
-        })
-
+        const smallSize = {
+            x : smallCursor.current.offsetWidth,
+            y : smallCursor.current.offsetWidth
+        }
+        const moveCursor = (e) => {
+          cursorX.set(e.clientX - smallSize.x/2);
+          cursorY.set(e.clientY - smallSize.y/2);
+          cursorXLarge.set(e.clientX - largeSize.x/2);
+          cursorYLarge.set(e.clientY - largeSize.y/2);
+        };
+    
+        window.addEventListener("mousemove", moveCursor);
+    
         return () => {
-            document.removeEventListener('mousemove', updatePos)
-        }
-    },[type])
+          window.removeEventListener("mousemove", moveCursor);
+        };
+    }, []);
+    
 
-    // ! Cursor state
-    useEffect(() => {
-        console.log('====================================');
-        console.log("Render Cursor");
-        console.log('====================================');
-        const render = () => {
-            if(type === "nav"){
-                SmallAnim.current = gsap.to(CursorSmall.current, {
-                    x: positionRef.current.mouseX,
-                    y: positionRef.current.mouseY,
-                    background:'red',
-                    borderRadius:'50%',
-                    scale:3,
-                    paused:true
-                })
-                LargeAnim.current = gsap.to(CursorLarge.current, {
-                    background:'red',
-                    borderRadius: "0",
-                    // x : positionRef.current.mouseX - SetLarge.current.x,
-                    // y : positionRef.current.mouseY - SetLarge.current.y,
-                    paused:true,
-                })
-                LargeAnim.current.play()
-                SmallAnim.current.play()
-            } else if (type === "default") {
-                SmallAnim.current = gsap.set(CursorSmall.current, {
-                    x: positionRef.current.mouseX,
-                    y: positionRef.current.mouseY,
-                    background:'cyan',
-                    borderRadius:'50%',
-                    scale:1,
-                    paused:true,
-                })
-                LargeAnim.current = gsap.to(CursorLarge.current, {
-                    background:'none',
-                    borderRadius: "50%",
-                    x : positionRef.current.mouseX - SetLarge.current.x,
-                    y : positionRef.current.mouseY - SetLarge.current.y,
-                    paused:true,
-                    delay:.01
-                })
-                LargeAnim.current.play()
-                SmallAnim.current.play()
-            }
-            positionRef.current.key = requestAnimationFrame(render)
-        }
-        render()
-    }, [type])
-
-
-    // const CursorDefault = () => {
-    //     gsap.to(CursorLarge.current, {
-    //         duration: .2,
-    //         x: mouseX - CursorLarge.current.clientWidth / 2,
-    //         y: mouseY - CursorLarge.current.clientHeight / 2,
-    //         background:"none"
-    //     })
-    //     gsap.set(CursorSmall.current, {
-    //         x: mouseX,
-    //         y: mouseY
-    //     })
-    // }
-
-    // const CursorNavEnter = () => {
-    //     gsap.to(CursorLarge.current, {
-    //         duration: .2,
-    //         x: mouseX - CursorLarge.current.clientWidth / 2,
-    //         y: mouseY - CursorLarge.current.clientHeight / 2,
-    //         background:"red"
-    //     })
-    //     gsap.set(CursorSmall.current, {
-    //         x: mouseX,
-    //         y: mouseY
-    //     })
-    // }
 
     return(
         <>
-            <div className="cursor" ref={CursorLarge} ></div>
-            <div className="cursor-small" ref={CursorSmall}></div>
+            <motion.div
+                className="cursor-small"
+                style={{
+                    translateX: cursorX,
+                    translateY: cursorY,
+                }}
+                ref={smallCursor}
+            />
+            <motion.div
+                className="cursor-large"
+                style={{
+                    translateX: cursorXSpring,
+                    translateY: cursorYSpring,
+                }}
+                ref={largeCursor}
+            />
         </>
     )
 }

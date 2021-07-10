@@ -1,5 +1,5 @@
 import '/styles/globals.scss'
-import React, { createContext } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import Layout from './components/layout'
 import Head from 'next/head'
 import {AnimatePresence} from 'framer-motion'
@@ -50,18 +50,36 @@ Router.onRouteChangeError = () => {
 
 
 function MyApp({ Component, pageProps }) {
+  const [isSave, setIsSave] = useState(true)
+
+  useEffect(() => {
+    let vwUser = {
+      width : window.innerWidth,
+      height : window.innerHeight
+    }
+    setIsSave(vwUser.height < vwUser.width)
+  })
+
   return (
     <>
-      {/* <Head> */}
-        {/* <script type="text/javascript" src="test.js"></script> */}
-      {/* </Head> */}
-      <MouseManager>
-        <LoadingPage/>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-        <Cursor/>
-      </MouseManager>
+      <Head>
+        <script type="text/javascript" src="test.js"></script>
+      </Head>
+      {
+        isSave ? 
+        (
+          <MouseManager>
+            <LoadingPage/>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            <Cursor/>
+          </MouseManager>
+        ) :
+        (
+            alert("Sorry your browser not supported now :(")
+        )
+      }
     </>
   )
 }
