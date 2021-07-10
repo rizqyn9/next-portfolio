@@ -69,11 +69,11 @@ function MyApp({ Component, pageProps }) {
         isSave ? 
         (
           <MouseManager>
+            <Cursor/>
             <LoadingPage/>
             <Layout>
               <Component {...pageProps} />
             </Layout>
-            <Cursor/>
           </MouseManager>
         ) :
         (

@@ -9,8 +9,8 @@ const Cursor = () => {
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
-    const cursorXLarge = useMotionValue(100);
-    const cursorYLarge = useMotionValue(100);
+    const cursorXLarge = useMotionValue(-100);
+    const cursorYLarge = useMotionValue(-100);
 
     const springConfig = { damping: 25, stiffness: 700 };
     const cursorXSpring = useSpring(cursorXLarge, springConfig);
@@ -26,10 +26,10 @@ const Cursor = () => {
             y : smallCursor.current.offsetWidth
         }
         const moveCursor = (e) => {
-          cursorX.set(e.clientX - smallSize.x/2);
-          cursorY.set(e.clientY - smallSize.y/2);
-          cursorXLarge.set(e.clientX - largeSize.x/2);
-          cursorYLarge.set(e.clientY - largeSize.y/2);
+          cursorX.set(e.clientX - 5);
+          cursorY.set(e.clientY - 5);
+          cursorXLarge.set(e.clientX - 40);
+          cursorYLarge.set(e.clientY - 40);
         };
     
         window.addEventListener("mousemove", moveCursor);
