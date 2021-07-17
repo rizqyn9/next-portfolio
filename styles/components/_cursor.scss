@@ -39,3 +39,8 @@ body{
     background-color: cyan;
     position: fixed;
 }
+
+nav:hover + .cursor-large {
+    border: red;
+    background-color: red !important;
+}

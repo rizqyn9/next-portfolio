@@ -24,7 +24,7 @@ const About = () => {
                         visible : {
                             opacity : 1,
                             transition : {
-                                staggerChildren : .1
+                                staggerChildren : .5
                             }
                         }
                     }}
@@ -43,21 +43,9 @@ const About = () => {
                     <TextReveal>and strong knowledge as a backend developer,</TextReveal>
                 </motion.div>
             </div>
-            <motion.div
-                className="globe-container"
-                initial={{
-                    opacity:0,
-                }}
-                animate={{
-                    opacity:1,
-                    transition:{
-                        duration : 3,
-                        ease:'easeInOut'
-                    }
-                }}
-            >
+            <div className="globe-container">
                 <GlobeThree/>
-            </motion.div>
+            </div>
         </main>
     )
 }

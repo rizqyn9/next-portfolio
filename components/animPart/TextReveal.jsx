@@ -4,46 +4,34 @@ const TextReveal = (props) => {
     const {children} = props
 
     return (
-        <motion.div
-            variants = {{
-                hidden : {
-                    opacity : 0,
-                    height : 'max-content',
-                    overflow : 'hidden'
-                },
-                visible : {
-                    opacity : 1,
-                    transition : {
-                        staggerChildren : .02
-                    }
-                }
+        <div
+            style={{
+                overflow:'hidden'
             }}
         >
-            {
-                children.split("").map((char, index) => {
-                    return(
-                        <motion.span
-                            key={"char-"+index}
-                            variants = {{
-                                hidden : {
-                                    opacity : 0,
-                                    minWidth : '.3em',                                  
-                                    display : 'inline-block',
-                                    y:'100%'
-                                },
-                                visible : {                            
-                                    opacity : 1,
-                                    y:0
+            <motion.div
+                variants = {{
+                    hidden : {
+                        height : 'max-content',
+                        overflow : 'hidden',
+                        y: "5vh",
+                        skewX:'-100deg',
+                        rotateX : '45deg',
+                    },
+                    visible : {
+                        y:0,
+                        skewX:0,
+                        rotateX : '0',
+                        transition : {
+                            duration : 1,
 
-                                }
-                            }}
-                        >
-                            {char}
-                        </motion.span>
-                    )
-                })
-            }
-        </motion.div>
+                        }
+                    }
+                }}
+            >
+                {children}
+            </motion.div>
+        </div>
     )
 }
 

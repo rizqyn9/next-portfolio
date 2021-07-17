@@ -23,7 +23,7 @@ nav {
         height: $width_nav;
         transition: all 3s;
         // cursor: none;
-        pointer-events: all;
+        // pointer-events: all;
         
         & > * {
             opacity: 0;

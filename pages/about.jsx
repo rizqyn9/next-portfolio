@@ -1,10 +1,11 @@
 import AboutPage from '../components/about/about'
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 
 const Home = () => {
     return (
+        <AnimatePresence exitBeforeEnter>
             <AboutPage/>
-
+        </AnimatePresence>
     )
 }
 

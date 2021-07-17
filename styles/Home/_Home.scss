@@ -41,16 +41,16 @@
         width: 35vw;
     }
     .text--line1{
-        font-size: 9rem;
-        letter-spacing: .5rem;
+        font-size: 6.5rem;
+        letter-spacing: .2rem;
     }
     .text--line2{
         font-size: 7rem;
-        letter-spacing: .2rem;
+        letter-spacing: .25rem;
     }
     .text--line3{
-        font-size: 7rem;
-        letter-spacing: .5rem;
+        font-size: 6rem;
+        letter-spacing: .1rem;
     }
 
 .full-stack{
@@ -60,16 +60,18 @@
     -webkit-text-stroke: .1px $color6;
 }
 
-$colors: $color8, $color6,$color2, $color7;
+// $colors: $color8, $color6,$color2, $color7;
+$colors: pink, $color6, $color2, $color7, blue;
 
-$max: 2;
-$stroke-step: 20%; 
+$max: 5;
+$stroke-step: 50%; 
 .text-copy {
     fill: none;
     // stroke: white;
     text-shadow: 1px cyan;
-    stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
-    stroke-width: 3px;
+    stroke-dasharray: $stroke-step $stroke-step;
+    // stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
+    stroke-width: 5px;
     animation: stroke-offset 5s cubic-bezier(0.075, 0.82, 0.1, 1);
     
     @for $item from 1 through $max {
@@ -82,7 +84,7 @@ $stroke-step: 20%;
     }
     &:hover{
         animation: stroke-offset 5s cubic-bezier(0.075, 0.82, 0.165, 1);
-
+        
     }
 }
 

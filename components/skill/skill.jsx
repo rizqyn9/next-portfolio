@@ -21,16 +21,13 @@ const Skill = () => {
                         visible : {
                             opacity : 1,
                             transition : {
-                                staggerChildren : .5
+                                staggerChildren : .2
                             }
                         }
                     }}
                     initial = "hidden"
                     animate = "visible"
                 >
-                    <TextReveal>
-                        Motivated junior web developer looking for a role as full-stack.
-                    </TextReveal>
                     <TextReveal>
                         Motivated junior web developer looking for a role as full-stack.
                     </TextReveal>
@@ -45,9 +42,21 @@ const Skill = () => {
                     </TextReveal>
                 </motion.div>
             </div>
-            <div className="skill-canvas-container">
+            <motion.div
+                className="skill-canvas-container"
+                initial={{
+                    opacity:0
+                }}
+                animate={{
+                    opacity:1,
+                    transition : {
+                        ease : "easeIn",
+                        duration:2
+                    }
+                }}
+            >
                 <SkillCanvas />
-            </div>
+            </motion.div>
         </main>
     )
 }

@@ -34,7 +34,7 @@ const SkillCanvas = () => {
         <div id="tags"  style={{color :"transparent", position:"absolute"}}>
             {
                 skill.map(el => {
-                    return <a href="#">{el}</a>    
+                    return <a href="#" key={el}>{el}</a>    
                 })
             }
         </div>

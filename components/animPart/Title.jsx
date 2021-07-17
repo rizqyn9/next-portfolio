@@ -8,12 +8,10 @@ const Title = (props) => {
             className={`${className ? className : ''}`}
             variants={{
                 hidden : {
-                    opacity : 0
                 },
                 visible : {
-                    opacity : 1,
                     transition : {
-                        staggerChildren : .1
+                        staggerChildren : .03
                     }
                 }
             }}
@@ -23,23 +21,31 @@ const Title = (props) => {
             {
                 children.split("").map((char, index) => {
                     return(
-                        <motion.span
+                        <div
                             key={"char-"+index}
-                            variants = {{
-                                hidden : {
-                                    opacity : 0,
-                                    minWidth : '.4em',
-                                    display : 'inline-block',
-                                    scale : 0
-                                },
-                                visible : {
-                                    opacity : 1,
-                                    scale : 1
-                                }
+                            style={{
+                                display:'inline-block',
+                                overflow:'hidden'
                             }}
                         >
-                            {char}
-                        </motion.span>
+                            <motion.span
+                                variants = {{
+                                    hidden : {
+                                        minWidth : '.4em',
+                                        display : 'inline-block',
+                                        x:'-3vw'
+                                    },
+                                    visible : {
+                                        x: '0',
+                                        transition:{
+                                            duration: 1
+                                        }
+                                    }
+                                }}
+                            >
+                                {char}
+                            </motion.span>
+                        </div>
                     )
                 })
             }

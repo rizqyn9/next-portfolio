@@ -4,7 +4,21 @@ import {motion} from 'framer-motion'
 
 export default function index() {
   return (
-    <motion.div exit={{opacity:0}}>
+    <motion.div
+      initial="initial"
+      animate="animate"
+      variants={{
+        initial: {
+          opacity: 0,
+          transition:{
+            delay:5
+          }
+        },
+        animate: {
+          opacity: 1,
+        },
+      }}
+    >
       {/* <LoadingPage/> */}
       <Home/>
     </motion.div>

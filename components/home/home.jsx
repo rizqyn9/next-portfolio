@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useContext, useRef} from 'react'
 import MousContext from '../../components/cursor/MouseContext'
-import {gsap, Power0, Power1, Power2, Power3} from 'gsap'
+import {motion} from 'framer-motion'
+import Title from '../animPart/Title'
+
 
 const Home = () => { 
     const {type, setType} = useContext(MousContext)
@@ -10,41 +12,70 @@ const Home = () => {
     }, [])
 
     return(
-    <main className="home-container">
-        <div className="home-title-container">
-            <div className="home-title" >
-                <div className="title _title">Hello</div>
-                <div className="title _title">I'm</div>
-                <div className="title _title">Rizqy</div>
-            </div>
-            <div className="contents-container" >
-                <div className="text line1" ><span className="full-stack">Full-Stack</span> web development</div>
-                <div className="text line2"> based in Indonesian</div>
-            </div>
+    <motion.main 
+        className="home-container"
+        initial= {{
+            visibility : 'hidden',
+            opacity : 0
+        }}
+        animate={{
+            visibility : 'visible',
+            opacity: 1,
+            transition : {
+                duration: 2
+            }
+        }}
+        exit={{
+            x:'100vw'
+        }}
+        >
+        <div className="home-title-container" >
+            <motion.div className="contents-container"
+                variants={{
+                    hidden :{
+                        
+                    },
+                    visible:{
+                        transition:{
+                            staggerChildren : 1
+                        }
+                    }
+                }}
+                animate="visible"
+                initial="hidden"
+            >
+                <Title
+                    className="title _title"
+                >
+                    Hello I'm Rizqy
+                </Title>
+                <span className="full-stack">Full-Stack</span><Title> web development</Title>
+                <Title className="text line2"> based in Indonesian</Title>
+            </motion.div>
         </div>
-        <div className="svg-container">
-            <svg viewBox="0 0 800 600">
+        <div className="svg-container" >
+            <svg viewBox="0 0 800 600" width="100%" height="100%" >
                 <symbol id="s-text">
                     <text textAnchor="middle"
                         x="50%"
                         y="25%"
                         className="text--line1"
                         >
-                    UI / UX
+                    WEB DEV
                     </text>
                     <text textAnchor="middle"
                         x="50%"
                         y="55%"
                         className="text--line2"
                         >
-                    WEB DEV
+                    APP DEV
                     </text>
                     <text textAnchor="middle"
                         x="50%"
                         y="85%"
                         className="text--line3"
                         >
-                    APP DEV
+                    GAME DEV
                     </text>
                 </symbol>
                 
@@ -62,7 +93,7 @@ const Home = () => {
                 </g> 
             </svg>
         </div>
-    </main>
+    </motion.main>
     )
 }
 
