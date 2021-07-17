@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8080"
+    "start": "next start"
   },
   "dependencies": {
     "@cyriacbr/react-split-text": "^1.0.0",
