@@ -82,10 +82,10 @@ $stroke-step: 50%;
             stroke-dashoffset: $stroke-step * $item;
         }
     }
-    &:hover{
-        animation: stroke-offset 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    // &:hover{
+    //     animation: 0 5s cubic-bezier(0.075, 0.82, 0.165, 1);
         
-    }
+    // }
 }
 
 @keyframes stroke-offset {

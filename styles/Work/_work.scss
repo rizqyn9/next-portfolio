@@ -1,28 +1,23 @@
 
-.works{
-    font-weight: 900;
-    font-family: $fontSiginika;
-    // width: 100vw;
-    height: 100vh;
-    background-color: $color1;
-    // background-color: red;
-    overflow: hidden;
-    display: flex;
-    
-    main{
-        z-index: 1;
-        position: relative;
-        width: max-content;
-        height: 100%;
-		color: cyan !important;
-		
-        .works-content-container{
-            width: max-content;
-            height: 100%;
-            // border: 2px solid white;
-        }
-    }
+.works-container{
+	overflow: hidden;
+	z-index: 0;
+	position: relative;
+	width: max-content;
+	height: 100%;
+	color: cyan !important;
+	
+	.works-content-container{
+		width: max-content;
+		height: 100%;
+		// border: 2px solid white;
+	}
+
+	.svg-years{
+		stroke: cyan;
+	}
 }
+
 .content{
 	height: 100vh;
 	display: flex;

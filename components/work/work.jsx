@@ -26,19 +26,59 @@ const Work = () => {
             <div className="works-content-container" ref={scroller}>
                 <div className="content">
                     <div className="gallery">
-                    <motion.svg
-                    >
-                        <text textAnchor="middle"
-                            x="50%"
-                            y="25%"
-                            className="text--line1"
-                            >
-                        WEB DEV
-                        </text>
-                    </motion.svg>
                         <div className="gallery__text">
-                            <span className="gallery__text-inner" data-scroll data-scroll-speed="3">2020</span>
-                            <span data-scroll data-scroll-speed="1" className="gallery__text-inner">2021</span>
+                            <div
+                                data-scroll data-scroll-speed="3"
+                            >
+                                <motion.svg height="max-content" width="100%" viewBox="0 0 300 500"
+                                    className="svg-years"
+                                    strokeWidth="5"
+                                    >
+                                    <motion.text textAnchor="middle" x="50%" y="50%"
+                                        // className="text--line1"
+                                        // fontSize="10rem"
+                                        fill="none"
+                                        initial={{
+                                            strokeDasharray:200,
+                                        }}
+                                        animate={{
+                                            strokeDasharray:0,
+                                            transition:{
+                                                duration:1
+                                            }
+                                        }}
+                                    >
+                                    2020
+                                    </motion.text>
+                                </motion.svg>
+                            </div>
+                            <div
+                                data-scroll data-scroll-speed="1"
+                            >
+                                <motion.svg height="max-content" width="100%" viewBox="0 0 300 500"
+                                    className="svg-years"
+                                    strokeWidth="5"
+                                    >
+                                    <motion.text textAnchor="middle" x="50%" y="50%"
+                                        // className="text--line1"
+                                        // fontSize="10rem"
+                                        fill="none"
+                                        initial={{
+                                            strokeDasharray:200,
+                                        }}
+                                        animate={{
+                                            strokeDasharray:0,
+                                            transition:{
+                                                duration:1
+                                            }
+                                        }}
+                                    >
+                                    2021
+                                    </motion.text>
+                                </motion.svg>
+                            </div>
+                            {/* <span className="gallery__text-inner" data-scroll data-scroll-speed="3">2020</span> */}
+                            {/* <span data-scroll data-scroll-speed="1" className="gallery__text-inner">2021</span> */}
                         </div>
                         {
                             data.map((val,i) => {
