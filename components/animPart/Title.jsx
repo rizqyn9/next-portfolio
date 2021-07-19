@@ -11,6 +11,7 @@ const Title = (props) => {
                 },
                 visible : {
                     transition : {
+                        delay:2,
                         staggerChildren : .03
                     }
                 }

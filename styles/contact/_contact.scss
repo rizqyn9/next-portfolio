@@ -4,8 +4,7 @@ main{
     height: 100vh;
 
     .form-container{
-        flex: 1.5 0 auto;
-        align-self: stretch;
+        // align-self: stretch;
         // background-color: cyan;
         display: flex;
         flex-direction: column;
@@ -14,19 +13,39 @@ main{
 
         .input-container{
             font-weight: 600;
+            // background-color: cyan;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
             *{
                 margin: .7rem 0 .2rem 0;
             }
         }
     }
-
+    .item-container{
+        // background-color: red;
+        width: 40vw;
+    }
     .social-container{
         background: rgba($color: $color5, $alpha: .2);
-
         position: relative;
         overflow: hidden;
         flex: 1 0 auto;
-        align-self: stretch;
+    }
+
+    .submit-container{
+        margin-top: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .submit {
+        align-self: flex-end;
+        justify-self: flex-end;
+        padding: .5rem 1.4rem;
+        border-radius: .3rem;
+        border: 2px solid $color8;
+        color: $color8;
     }
 }
 
@@ -38,7 +57,7 @@ input, textarea {
     border: 2px solid $color2;
     border-radius: 5px;
     height: 65px;
-    width: 80%;
+    width: 100%;
     color: $color2;
     font-size: 16px;
     font-weight: 300;
@@ -69,7 +88,7 @@ input, textarea {
   }
 
   .input_wrap {
-      width:auto; 
+    //   width:100%; 
       height:auto; 
       position:relative;
       margin-top: 1rem;
@@ -121,7 +140,7 @@ textarea{
         flex-direction: column;
         align-items: flex-end;
         justify-content: center;
-        margin-right: 3rem;
+        margin-right: 3rem
         // background-color: red;
     }
 
@@ -162,3 +181,70 @@ textarea{
 
 }  
   
+
+
+.custom-btn {
+    font-family: $fontAmarante;
+    width: 130px;
+    height: 40px;
+    color: $color1;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 900;
+    font-size: 1em;
+    letter-spacing: .1em;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+/* 5 */
+.btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: $color2;
+  background: linear-gradient(0deg, $color2 100%, $color7 100%);
+  }
+  .btn-5:hover {
+    color: $color2;
+    background: transparent;
+     box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: $color2;
+    box-shadow:
+     -1px -1px 5px 0px #fff,
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+  
+    

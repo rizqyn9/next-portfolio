@@ -21,6 +21,21 @@ export const data = [
     }
 ]
 
+export const contactLink = [
+    {
+        Title : "Github"
+    },
+    {
+        Title : "Facebook"
+    },
+    {
+        Title : "LinkedIn"
+    },
+    {
+        Title : "Telegram"
+    },
+]
+
 export const skill = [
     "WebGL",
     "html5",

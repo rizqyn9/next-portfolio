@@ -10,11 +10,20 @@
 	.works-content-container{
 		width: max-content;
 		height: 100%;
+		// background-color: red;
 		// border: 2px solid white;
 	}
 
 	.svg-years{
+		height: 20vh;
+		width: 30vw;
+		background-color: red;
 		stroke: cyan;
+
+		.text{
+			background-color: darkblue;
+			font-size: 20rem;
+		}
 	}
 }
 

@@ -1,19 +1,30 @@
 import React, {useRef, useState, useEffect} from 'react'
 import { motion } from 'framer-motion';
 import Title from '../components/animPart/Title';
+import {contactLink} from '../dataConfig'
+import SocialList from '../components/contact/SocialList';
 
 const Contact = () => {
     const [textarea, setTextarea] = useState(false);
     const [emailValid, setEmailValid] = useState(true);
     
-    const socialContainer = useRef();
-
-
-    useEffect(() => {
-    }, []);
-
     return (
-        <main>
+        <motion.main
+            variants={{
+                hidden:{
+                    opacity:0
+                },
+                visible:{
+                    opacity:1,
+                    transition:{
+                        duration:1,
+                        when :'beforeChildren'
+                    }
+                }
+            }}
+            initial="hidden"
+            animate="visible"
+        >
             <div className="form-container">
                 <Title className="__title">Contact</Title>
                 <div className="item-container">
@@ -44,45 +55,50 @@ const Contact = () => {
                                 }}
                             ></textarea>
                             <label className="">Message</label>
+                        </div>
+                        <div className="input_wrap submit-container">
+                            {/* <motion.circle></motion.circle>
+                            <motion.div className="submit">Submit</motion.div> */}
+                            <button class="custom-btn btn-5"><span>Submit</span></button>
                         </div>    
                     </div>
                 </div>
             </div>
-            <div className="social-container" ref={socialContainer}>
+            <motion.div className="social-container" 
+                variants={{
+                    hidden : {
+                        skewX:100,
+                        x:"100%"
+                    }, 
+                    show : {
+                        skewX:0,
+                        x:0,
+                        transition :{
+                            duration : 2,
+                            delayChildren :1.5,
+                            staggerChildren : .05
+                        }
+                    }
+                }}
+                animate="show"
+                initial="hidden"
+            >
                 <div className="navigation-wrapper">
                     <div className="project-preview-wrapper">
                         <div className="project-preview"></div>
                     </div>
                     <ul className="navigation-list">
-                        <li className="navigation-item item1">
-                            <a className="navigation-link navigation-link-1" href="#">
-                            <span data-text="Twitter">Twitter</span>
-                            </a>
-                        </li>
-                        <li className="navigation-item">
-                            <a className="navigation-link navigation-link-1" href="#">
-                            <span data-text="Github">Github</span>
-                            </a>
-                        </li>
-                        <li className="navigation-item">
-                            <a className="navigation-link navigation-link-1" href="#">
-                            <span data-text="LinkedIn">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li className="navigation-item">
-                            <a className="navigation-link navigation-link-1" href="#">
-                            <span data-text="Dribble">Dribble</span>
-                            </a>
-                        </li>
-                        <li className="navigation-item">
-                            <a className="navigation-link navigation-link-1" href="#">
-                            <span data-text="Facebook">Facebook</span>
-                            </a>
-                        </li>
+                        {
+                            contactLink.map((val, i) => {
+                                return(
+                                    <SocialList data={val} index={i} />
+                                )
+                            })
+                        }
                     </ul>
                 </div>
-            </div>
-        </main>
+            </motion.div>
+        </motion.main>
     )
 }
 

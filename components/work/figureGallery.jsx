@@ -3,8 +3,7 @@ import TitleAnim from '../animPart/Title'
 
 const FigureGallery = ({children, Image, Title, Tags, Index}) => {
     return(
-        <>
-        <figure className="gallery__item">
+        <figure className="gallery__item" key={Index}>
             <div className="gallery__item-img"><div className="gallery__item-imginner" style={{backgroundImage: `url(${Image})`}} data-scroll data-scroll-speed="-0.8"></div></div>
             <figcaption className="gallery__item-caption">
                 <TitleAnim className="gallery__item-title" data-scroll data-scroll-speed="1">{Title}</TitleAnim>
@@ -22,7 +21,6 @@ const FigureGallery = ({children, Image, Title, Tags, Index}) => {
                 {/* <a className="gallery__item-link">view project</a> */}
             </figcaption>
         </figure>
-        </>
     )
 }
 
