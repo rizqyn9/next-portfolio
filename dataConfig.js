@@ -26,7 +26,7 @@ export const data = [
     },
     {
         Title : "Pulsa API",
-        Image : "/works/SimpleCRUD.png",
+        Image : "/works/simpleCRUD.png",
         Tags : ["API", "Express"],
     },
     {
