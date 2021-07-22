@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Title from '../components/animPart/Title';
 import {contactLink} from '../dataConfig'
 import SocialList from '../components/contact/SocialList';
+import Head from 'next/head'
 
 const Contact = () => {
     const [textarea, setTextarea] = useState(false);
@@ -25,6 +26,9 @@ const Contact = () => {
             initial="hidden"
             animate="visible"
         >
+            <Head>
+                <title>R-Dev | Contact</title>
+            </Head>
             <div className="form-container">
                 <Title className="__title">Contact</Title>
                 <div className="item-container">
@@ -91,7 +95,7 @@ const Contact = () => {
                         {
                             contactLink.map((val, i) => {
                                 return(
-                                    <SocialList data={val} index={i} />
+                                    <SocialList data={val} index={i} key={i}/>
                                 )
                             })
                         }

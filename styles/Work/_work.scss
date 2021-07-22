@@ -46,7 +46,7 @@
 						    '... gallery-image'
 						    '... ...' ;
 	grid-template-columns: 8rem 21vmax;
-	grid-template-rows: 7rem 28vmax 3rem;
+	grid-template-rows: 4.3rem 28vmax .5rem;
 }
 
 .gallery__item-img {
@@ -74,7 +74,7 @@
 						    'gallery-link ...'
 						    'gallery-link gallery-tags' ;
 	grid-template-columns: 8rem auto;
-	grid-template-rows: 8rem auto 3rem;
+	grid-template-rows: 5rem auto 4rem;
 
 }
 
@@ -89,8 +89,9 @@
 .gallery__item-title {
 	grid-area: gallery-title;
 	margin: 0;
-	font-size: 4rem;
-	font-size: clamp(2rem,5vw,4rem);
+	font-size: 3rem;
+	font-size: clamp(1rem,4vw,3rem);
+	mix-blend-mode: difference;
 }
 
 .gallery__item-number,
@@ -126,8 +127,10 @@
 .gallery__item-tags {
 	grid-area: gallery-tags;
 	justify-self: end;
-	font-size: 1.5rem;
+	font-size: 2rem;
+	font-weight: bolder;
 	display: grid;
+	mix-blend-mode: difference;
 	grid-auto-flow: column;
 	grid-gap: 1rem;
 	cursor: pointer;
@@ -148,6 +151,9 @@
 	display: block;
 }
 
+.small-title{
+	font-size: 2rem;
+}
 @media screen and (min-width: 53em) {
 	.frame {
 		grid-template-areas: 'title demos demos links';

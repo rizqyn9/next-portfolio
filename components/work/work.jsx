@@ -3,6 +3,7 @@ import FigureGallery from './figureGallery'
 import {motion} from 'framer-motion'
 import {data} from '../../dataConfig'
 import SvgDash from '../animPart/SvgDash'
+import Head from 'next/head'
 
 const Work = () => {
     const scroller = useRef()
@@ -24,6 +25,9 @@ const Work = () => {
     }, [])
     return(
         <main className="works-container" style={{color:"white"}}>
+            <Head>
+                <title>R-Dev | Work</title>
+            </Head>
             <motion.div className="works-content-container" ref={scroller}
                 variants={{
                     hidden:{

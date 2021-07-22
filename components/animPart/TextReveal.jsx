@@ -5,6 +5,7 @@ const TextReveal = (props) => {
 
     return (
         <div
+            className ="text-reveal"
             style={{
                 overflow:'hidden'
             }}

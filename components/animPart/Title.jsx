@@ -26,7 +26,7 @@ const Title = (props) => {
                             key={"char-"+index}
                             style={{
                                 display:'inline-block',
-                                overflow:'hidden'
+                                overflow:'hidden',
                             }}
                         >
                             <motion.span

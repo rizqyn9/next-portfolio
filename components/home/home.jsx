@@ -49,8 +49,9 @@ const Home = () => {
                 >
                     Hello I'm Rizqy
                 </Title>
-                <span className="full-stack">Full-Stack</span><Title> web development</Title>
-                <Title className="text line2"> based in Indonesian</Title>
+                {/* <span className="full-stack">Full-Stack</span><Title> web development</Title> */}
+                <Title>as Full-Stack Developer</Title>
+                <Title className="text line2">based in Indonesian</Title>
             </motion.div>
         </div>
         <div className="svg-container" >

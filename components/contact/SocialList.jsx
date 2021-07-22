@@ -16,7 +16,7 @@ const SocialList = (props) => {
                 }
             }}
         >
-            <motion.a className="navigation-link navigation-link-1" href={data.Link}
+            <motion.a className="navigation-link navigation-link-1" href={data.Link} target="_blank"
                 variants={{
                     hidden : {
                         height : '0%',

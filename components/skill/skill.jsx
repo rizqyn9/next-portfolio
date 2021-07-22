@@ -3,20 +3,24 @@ import Title from '../animPart/Title'
 import SkillCanvas from './SkillCanvas'
 import TextReveal from '../animPart/TextReveal'
 import {motion} from 'framer-motion'
+import Head from 'next/head'
 
 
 const Skill = () => {
     return (
         <main className="skills-container">
+            <Head>
+                <title>R-Dev | Skill & Experience</title>
+            </Head>
             <div className="skills-content-container">
                 <Title className="__title">Skills & Experience</Title>
                 <br />
                 <motion.div
                     className="contents-container __content"
-                    className ="__content"
                     variants = {{
                         hidden : {
-                            opacity : 0
+                            opacity : 0,
+                            fontSize : "1.2rem",
                         },
                         visible : {
                             opacity : 1,
@@ -29,16 +33,28 @@ const Skill = () => {
                     animate = "visible"
                 >
                     <TextReveal>
-                        Motivated junior web developer looking for a role as full-stack.
+                        As Web Developer, i'm using ReactJS as FrontEnd and some NodeJS framework Express.js or NestJS
                     </TextReveal>
                     <TextReveal>
-                        In web development better to using HTML, CSS, JS, custom plugins, GSAPP, interactive layout and many library
+                        In Game Development better for implementing any logic using Unity and C#
                     </TextReveal>
                     <TextReveal>
-                        In apps development focused in C++, C# and Python
+                        Have some experience using some DBMS like MongoDB, Postgre, MySQL, Redis and Elastic Search
                     </TextReveal>
                     <TextReveal>
-                        I have also full-stack developer experience with some companies in web and apps development
+                        Better using any linux distribution and version control
+                    </TextReveal>
+                    <TextReveal>
+                        Have experience to create Unit Testing before Deployment use Jest
+                    </TextReveal>
+                    <TextReveal>
+                        CI/CD for develop and deployment is better for your company
+                    </TextReveal>
+                    <TextReveal>
+                        Now i'm learning as DevOps Enginer, Scalling apps with Docker and Kubernetes
+                    </TextReveal>
+                    <TextReveal>
+
                     </TextReveal>
                 </motion.div>
             </div>

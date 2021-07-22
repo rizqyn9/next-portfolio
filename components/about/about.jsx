@@ -3,6 +3,7 @@ import GlobeThree from './globeThree'
 import Title from '../animPart/Title'
 import TextReveal from '../animPart/TextReveal'
 import { motion, motionValue } from 'framer-motion'
+import {MySelf} from '../../dataConfig'
 
 const About = () => {
     useEffect ( () => {
@@ -32,15 +33,17 @@ const About = () => {
                     animate = "visible"
                     exit="hidden"
                 >
-                    <TextReveal>Hi I’m Rizqy Prastya.</TextReveal>
-                    <TextReveal>a 20 years old </TextReveal>
+                    <br/>
+                    <TextReveal>My name Rizqy Prastya Ari Nugroho.</TextReveal>
+                    <TextReveal>Any people can call me Rizqy.</TextReveal>
+                    <TextReveal>a {MySelf.age} years old </TextReveal>
                     <TextReveal>Indonesian Student in Game Dev Multimedia Training Centre University</TextReveal>
-                    <TextReveal>I’m currently working as freelance</TextReveal>
+                    <TextReveal>I’m currently working as freelancer and CEO of R-Dev Studio</TextReveal>
+                    <br/>
                     <TextReveal>Full Stack Web Dev based in Indonesian.</TextReveal>
-                    <TextReveal> love bending the rules of CSS, </TextReveal>
-                    <TextReveal>and playing with WebGL or ThreeJS</TextReveal>
-                    <TextReveal>I have experience with style code at scale,</TextReveal>
-                    <TextReveal>and strong knowledge as a backend developer,</TextReveal>
+                    <TextReveal>I'm great at implementing game logic.</TextReveal>
+                    <TextReveal>Currently im focused to be DevOps Enginer.</TextReveal>
+                    <TextReveal>Scalling and optimation is my purpose</TextReveal>
                 </motion.div>
             </div>
             <motion.div
