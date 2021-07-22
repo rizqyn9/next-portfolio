@@ -1,4 +1,8 @@
 import React, {createContext, useState} from 'react'
+import {atom} from 'jotai'
+
+const MouseStateJot = atom("hahah")
+
 
 /**
  * @enum
@@ -15,4 +19,4 @@ const MouseContext = createContext({
 })
 
 export default MouseContext
-
+export {MouseStateJot}

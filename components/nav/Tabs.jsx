@@ -1,16 +1,16 @@
 import React,{useContext} from 'react'
 import Link from './NavLink'
-import {gsap} from 'gsap'
-import MouseContext from '../cursor/MouseContext'
+import {useAtom} from 'jotai'
+import MouseContext, {MouseStateJot} from '../cursor/MouseContext'
 
 
 const Tabs = () => {
-   const {setType, type, eventProp, setEventProp} = useContext(MouseContext)
+   const [type, setType] = useAtom(MouseStateJot)
    const MouseEnterNav = (e) => {
-      setType("nav")
+      setType("figure")
    }   
    const MouseLeaveNav = (e) => {
-      setType("default")
+      setType("none")
    }   
    return(
       <div className="Tabs">

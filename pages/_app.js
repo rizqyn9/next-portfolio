@@ -9,6 +9,7 @@ import LoadingPage from '../components/loading/LoadingPage'
 import Cursor from '../components/cursor/cursor'
 // import CursorManager from '../context/CursorManager'
 import MouseManager from '../components/cursor/MouseManager'
+import {Provider} from 'jotai'
 
 function MyApp({ Component, pageProps, router }) {
   const [isSave, setIsSave] = useState(true)
@@ -25,17 +26,24 @@ function MyApp({ Component, pageProps, router }) {
     <>
       <Head>
         <script type="text/javascript" src="test.js"></script>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png"/>
+
       </Head>
       {
         isSave ? 
         (
-          <MouseManager>
-            <Cursor/>
-            {/* <LoadingPage/> */}
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </MouseManager>
+          <Provider>
+            <MouseManager>
+              <Cursor/>
+              {/* <LoadingPage/> */}
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </MouseManager>
+          </Provider>
         ) :
         (
             alert("Sorry your browser not supported now :(")

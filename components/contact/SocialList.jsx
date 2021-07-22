@@ -1,9 +1,14 @@
 import {motion} from 'framer-motion'
+import { MouseStateJot } from '../cursor/MouseContext'
+import {useAtom} from 'jotai' 
 
 const SocialList = (props) => {
     const {data, index} = props
+    const [type, setType] = useAtom(MouseStateJot)
     return(
         <motion.li className="navigation-item item1" key={`${data.Title}-${index}`}
+            onMouseEnter={() => setType('figure')}
+            onMouseLeave={() => setType("none")}
             variants={{
                 hidden : {
                     opacity : 0,

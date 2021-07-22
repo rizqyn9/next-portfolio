@@ -12,9 +12,10 @@ body{
 	// pointer-events: none !important;
 	// z-index: 200;
     // transform: translate($cursor-large, $cursor-large);
+    display: block;
     border: 3px solid $color2;
     background-color: transparent;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: $cursor-large;
@@ -24,23 +25,38 @@ body{
     z-index: 999;
     pointer-events: none;
     mix-blend-mode: difference;
+
+    &.hover-work{
+        // display: inline-block;
+        // background-color: darkblue;
+        transform: scale(0.9);
+        z-index: 500;
+        transition: all;
+    }
 }
 
 .cursor-small {
+    mix-blend-mode: difference;
     // mix-blend-mode: difference;
     pointer-events: none;
-    z-index: 200;
-    pointer-events: none !important;
     width: .5rem;
+    z-index: 200;
     height: .5rem;
     border-radius: 50%;
     top: 0;
     left: 0;
     background-color: cyan;
-    position: fixed;
+    position: absolute;
+    
+    &.hover-work{
+        // display: inline-block;
+        // background-color: darkblue;
+        transform: scale(5);
+        z-index: 500;
+        transition: all;
+    }
 }
 
-nav:hover + .cursor-large {
-    border: red;
-    background-color: red !important;
+.none-state{
+
 }

@@ -130,10 +130,11 @@
 	font-size: 2rem;
 	font-weight: bolder;
 	display: grid;
-	mix-blend-mode: difference;
+	mix-blend-mode: exclusion;
 	grid-auto-flow: column;
 	grid-gap: 1rem;
 	cursor: pointer;
+	// -webkit-text-stroke: 2px darkblue;
 }
 
 .gallery__text {

@@ -5,9 +5,14 @@ export const data = [
         Tags : ["web", "app"],
     },
     {
-        Title : "Matchmaker Scalling",
+        Title : "Matchmaker Services",
         Image : "/works/matchmaker.png",
-        Tags : ["Kubernetes", "Docker", "Redis"],
+        Tags : ["WebSocket", "EC2", "Redis"],
+    },
+    {
+        Title : "Unity Scalling",
+        Image : "/works/ScallingGameServer.png",
+        Tags : ["Docker", "Kubernetes"],
     },
     {
         Title : "Arsip Inaktif",
