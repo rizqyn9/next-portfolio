@@ -30,8 +30,8 @@ const Cursor = () => {
             y : smallCursor.current.offsetWidth
         }
         const moveCursor = (e) => {
-          cursorX.set(e.clientX - 5);
-          cursorY.set(e.clientY - 5);
+          cursorX.set(e.clientX);
+          cursorY.set(e.clientY);
           cursorXLarge.set(e.clientX - 40);
           cursorYLarge.set(e.clientY - 40);
         };
@@ -77,10 +77,10 @@ const Cursor = () => {
                 }}
                 variants ={{
                     none : {
-                        scale : 1
+                        scale : .1
                     },
                     figure : {
-                        scale : 7,
+                        scale : 1,
                     },
                     nav : {
 

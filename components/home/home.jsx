@@ -1,16 +1,13 @@
 import React, {useState, useEffect, useContext, useRef} from 'react'
-import MousContext from '../../components/cursor/MouseContext'
+import Link from 'next/link'
 import {motion} from 'framer-motion'
 import Title from '../animPart/Title'
+import {useAtom} from 'jotai'
+import { MouseStateJot } from '../cursor/MouseContext'
 
 
 const Home = () => { 
-    const {type, setType} = useContext(MousContext)
-
-    useEffect(()=> {
-
-    }, [])
-
+    const [type, setType] = useAtom(MouseStateJot)
     return(
     <motion.main 
         className="home-container"
@@ -53,6 +50,28 @@ const Home = () => {
                 <Title>as Full-Stack Developer</Title>
                 <Title className="text line2">based in Indonesian</Title>
             </motion.div>
+            <motion.div className="download-reveal"
+            >
+                {/* <Link href="/CV_RizqyPrastyaAriNugroho.pdf" target="_blank"> */}
+                    <motion.a className="custom-btn btn-3 download"
+                        initial={{
+                            y: '3rem'
+                        }}
+                        animate={{
+                            y:0,
+                            transition:{
+                                duration : 3,
+                                ease:'easeOut'
+                            }
+                        }}
+                        href="/CV_RizqyPrastyaAriNugroho.pdf"
+                        target="_blank"
+                        download="CV_RizqyNugroho"
+                        onMouseEnter={() => setType('figure')}
+                        onMouseLeave={() => setType('none')}
+                    ><span>Download CV</span></motion.a>
+                {/* </Link> */}
+            </motion.div> 
         </div>
         <div className="svg-container" >
             <svg viewBox="0 0 800 600" width="100%" height="100%" >

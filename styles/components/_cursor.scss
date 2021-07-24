@@ -1,6 +1,11 @@
 body{
     cursor: none;
+    & > * {
+        cursor: none;
+        
+    }
 }
+
 .cursor-large {
     // pointer-events: none;
     // width: $cursor-large;
@@ -39,12 +44,12 @@ body{
     mix-blend-mode: difference;
     // mix-blend-mode: difference;
     pointer-events: none;
-    width: .5rem;
+    width: 5rem;
     z-index: 200;
-    height: .5rem;
+    height: 5rem;
     border-radius: 50%;
-    top: 0;
-    left: 0;
+    top: -2.5rem;
+    left: -2.5rem;
     background-color: cyan;
     position: absolute;
     

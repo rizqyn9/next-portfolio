@@ -21,10 +21,15 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+button {
+  cursor: none;
 }
 
 * {
+  cursor: none !important;
   box-sizing: border-box;
 }
 
