@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react'
-
+import {skill} from '../../dataConfig'
 const SkillCanvas = () => {
     const sphere = useRef()
     useEffect(() => {
@@ -32,26 +32,11 @@ const SkillCanvas = () => {
             </canvas>
         </div>
         <div id="tags"  style={{color :"transparent", position:"absolute"}}>
-            <a href="#" style={{color :"transparent"}}>WebGL</a>
-            <a href="#" style={{color :"transparent"}}>html5</a>
-            <a href="#" style={{color :"transparent"}}>canvas</a>
-            <a href="#" style={{color :"transparent"}}>Three.js</a>
-            <a href="#" style={{color :"transparent"}}>Node JS</a>
-            <a href="#" style={{color :"transparent"}}>Express JS</a>
-            <a href="#" style={{color :"transparent"}}>Bootsrap</a>
-            <a href="#" style={{color :"transparent"}}>SQL</a>
-            <a href="#" style={{color :"transparent"}}>NoSQL</a>
-            <a href="#" style={{color :"transparent"}}>npm</a>
-            <a href="#" style={{color :"transparent"}}>SASS</a>
-            <a href="#" style={{color :"transparent"}}>JQuery</a>
-            <a href="#" style={{color :"transparent"}}>CSS</a>
-            <a href="#" style={{color :"transparent"}}>React JS</a>
-            <a href="#" style={{color :"transparent"}}>Git</a>
-            <a href="#" style={{color :"transparent"}}>Javascript</a>
-            <a href="#" style={{color :"transparent"}}>C#</a>
-            <a href="#" style={{color :"transparent"}}>Python</a>
-            <a href="#" style={{color :"transparent"}}>C++</a>
-            <a href="#" style={{color :"transparent"}}>Next JS</a>
+            {
+                skill.map(el => {
+                    return <a href="#" key={el}>{el}</a>    
+                })
+            }
         </div>
         </>
     )

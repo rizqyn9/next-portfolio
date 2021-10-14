@@ -1,67 +1,67 @@
 import React, {useEffect} from 'react'
-import {gsap} from 'gsap'
 import GlobeThree from './globeThree'
-import {SplitChars, Controls, PlayState, Timeline, Tween, Reveal } from 'react-gsap'
-import Container from '../container/container'
-import animText from '../../utils/animText'
+import Title from '../animPart/Title'
+import TextReveal from '../animPart/TextReveal'
+import { motion, motionValue } from 'framer-motion'
+import {MySelf} from '../../dataConfig'
 
-
-// import Splitting from 'splitting'
 const About = () => {
     useEffect ( () => {
-        gsap.from('.line',2,{
-            y: 200,
-            ease: "power4.out",
-            delay: 0,
-            skewY: 10,
-            stagger: {
-                amount: .9,
-            },
-        })
-        gsap.from('.globe-canvas', 2,{
-            opacity:0,
-            right:'70vw',
-        })
     }, [])
     
     return(
-        <Container>
         <main className="about-container">
-            <div className="about-content-container">
-                <div className="about-title-container __title">
-                    <Tween 
-                        from={{x:'1vw', overflow:'hidden', ease: "power4.out", opacity:0,  backgroundColor:'cyan', borderRadius:'50%'}}
-                        stagger={'.08'}
-                    >
-                        <SplitChars
-                            wrapper={<div className="wrapper" style={{display:'inline-block'}}/>}
-                        >
-                            About me.
-                        </SplitChars>
-                    </Tween>
-                </div>
-                
-                <div className="contents-container " >
-                    <div className="about-contents __content">
-                        <div className="line-rev"><span className="line">Hi I’m Rizqy Prastya.</span></div>
-                        <div className="line-rev"><span className="line">a 20 years old </span></div>
-                        <div className="line-rev"><span className="line">Indonesian Student in Game Dev Multimedia Training Centre University</span></div>
-                        <div className="line-rev"><span className="line">I’m currently working as freelance </span></div>
-                        <div className="line-rev"><span className="line">Full Stack Web Dev based in Indonesian.</span></div>
-                    </div>
-                    <div className="about-contents content __content" id="content2" data-splitting>
-                        <div className="line-rev"><span className="line">I love bending the rules of CSS, </span></div>
-                        <div className="line-rev"><span className="line">and playing with WebGL or ThreeJS</span></div>
-                        <div className="line-rev"><span className="line">I have experience with style code at scale,</span></div>
-                        <div className="line-rev"><span className="line">and strong knowledge as a backend developer,</span></div>
-                    </div>
-                </div>
+            <div className="about-content-container ">       
+                <Title className="__title">About Me</Title>
+                <motion.div
+                    className ="__content"
+                    variants = {{
+                        hidden : {
+                            opacity : 0,
+                            transition: {
+                                staggerChildren :1
+                            }
+                        },
+                        visible : {
+                            opacity : 1,
+                            transition : {
+                                staggerChildren : .1
+                            }
+                        }
+                    }}
+                    initial = "hidden"
+                    animate = "visible"
+                    exit="hidden"
+                >
+                    <br/>
+                    <TextReveal>My name Rizqy Prastya Ari Nugroho.</TextReveal>
+                    <TextReveal>Any people can call me Rizqy.</TextReveal>
+                    <TextReveal>a {MySelf.age} years old </TextReveal>
+                    <TextReveal>Indonesian Student in Game Dev Multimedia Training Centre University</TextReveal>
+                    <TextReveal>I’m currently working as freelancer and CEO of R-Dev Studio</TextReveal>
+                    <br/>
+                    <TextReveal>Full Stack Web Dev based in Indonesian.</TextReveal>
+                    <TextReveal>I'm great at implementing game logic.</TextReveal>
+                    <TextReveal>Currently im focused to be DevOps Enginer.</TextReveal>
+                    <TextReveal>Scalling and optimation is my purpose</TextReveal>
+                </motion.div>
             </div>
-            <div className="globe-container">
+            <motion.div
+                className="globe-container"
+                initial={{
+                    opacity:0,
+                }}
+                animate={{
+                    opacity:1,
+                    transition:{
+                        duration : 3,
+                        ease:'easeInOut'
+                    }
+                }}
+            >
                 <GlobeThree/>
-            </div>
+            </motion.div>
         </main>
-    </Container>
     )
 }
 

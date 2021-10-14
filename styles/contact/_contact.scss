@@ -1,0 +1,250 @@
+main{
+    flex: 1;
+    display: flex;
+    height: 100vh;
+
+    .form-container{
+        // align-self: stretch;
+        // background-color: cyan;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 7rem;
+
+        .input-container{
+            font-weight: 600;
+            // background-color: cyan;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            *{
+                margin: .7rem 0 .2rem 0;
+            }
+        }
+    }
+    .item-container{
+        // background-color: red;
+        width: 40vw;
+    }
+    .social-container{
+        background: rgba($color: $color5, $alpha: .2);
+        position: relative;
+        overflow: hidden;
+        flex: 1 0 auto;
+    }
+
+    .submit-container{
+        margin-top: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .submit {
+        align-self: flex-end;
+        justify-self: flex-end;
+        padding: .5rem 1.4rem;
+        border-radius: .3rem;
+        border: 2px solid $color8;
+        color: $color8;
+    }
+
+.custom-btn {
+    font-family: $fontAmarante;
+    width: 130px;
+    height: 40px;
+    color: $color1;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 900;
+    font-size: 1em;
+    letter-spacing: .1em;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+    /* 5 */
+    .btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: $color2;
+    background: linear-gradient(0deg, $color2 100%, $color7 100%);
+    }
+    .btn-5:hover {
+    color: $color2;
+    background: transparent;
+    box-shadow:none;
+    }
+    .btn-5:before,
+    .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: $color2;
+    box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+    }
+    .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+    }
+    .btn-5:hover:before,
+    .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+    }
+
+
+
+}
+
+input::placeholder{
+    color: red;
+}
+
+input, textarea {
+    border: 2px solid $color2;
+    border-radius: 5px;
+    height: 65px;
+    width: 100%;
+    color: $color2;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: .1em;
+    padding-left: 20px;
+    box-shadow: none;  
+    background-color: $color1;
+  }
+  
+  /* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
+  
+  input:focus + label, input:valid + label, .input-invalid + label, textarea:focus +label, .textarea-active + label{
+    font-size: 1rem !important;
+    color: $color2;
+    top: -10px !important;
+    left:10px !important;
+    background: $color1;
+    // background-color: red;
+    padding: 0px 5px 0px 5px !important;
+  }
+
+  .input-invalid {
+      border-color: pink !important;
+  }
+
+  .label-invalid{
+    color: pink !important;
+  }
+
+  .input_wrap {
+    //   width:100%; 
+      height:auto; 
+      position:relative;
+      margin-top: 1rem;
+  }
+  
+  .input_wrap label {
+    font-family:arial;
+    font-size:16px;
+    color: $color3;
+    padding: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+    pointer-events: none;
+  }
+
+  input:focus, textarea:focus{
+      outline:none;
+      border: 5px solid $color2;
+}
+
+textarea{
+    height: 10rem;
+    padding-top: 1rem;
+}
+  
+.social-container{
+    
+    .social-area{
+        // background-color: red;
+        // width: 50%;
+        height: 100%;
+        position: absolute;
+        transform: translate(92%);
+    }
+
+
+    .navigation-wrapper{
+        height: 100%;
+    }
+    .navigation-wrapper ul {
+        height: 100%;
+        list-style: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-right: 3rem
+        // background-color: red;
+    }
+
+    .navigation-item {
+        user-select: none;
+        margin: 0 0;
+        overflow: hidden;
+        // background-color: blue;
+        width: max-content;
+    }
+
+
+    a {
+        font-family: $fontAmarante;
+        font-size: 10vh;
+        text-decoration: none;
+        // color: rgba(255, 255, 255, 0.3);
+        color: $color2;
+    }
+
+    span {
+        position: relative;
+        display: block;
+    }
+
+    .navigation-item span:before {
+        width: 0;
+        color: #ffffff;
+        overflow: hidden;
+        position: absolute;
+        content: attr(data-text);
+        transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+    }
+
+    .navigation-item span:hover:before {
+        width: 100%;
+    }
+
+}  
+  
+

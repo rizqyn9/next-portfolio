@@ -1,21 +1,20 @@
 $bgLoad : rgba(0,0,0,.3);
 
 .wrap {
-    visibility: hidden;
     z-index: 100;
     font-weight: 900;
     font-size: 1.8em;
     color: white;
     position: absolute;
     top: 0;
-    left: -102vw;
+    left: 0;
     background-color: black;
     width: 100vw;
     height: 100vh;
     display: grid;
     place-content: center;
 }
-@import "http://battlelog.battlefield.com/cdnprefix/local/public/base/fonts/purista/purista.css";
+// @import "http://battlelog.battlefield.com/cdnprefix/local/public/base/fonts/purista/purista.css";
 @-webkit-keyframes title {
   0% {
     opacity: 0;

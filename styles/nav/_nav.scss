@@ -10,6 +10,7 @@ nav {
     // overflow: hidden;
     font-family: $fontQuantico;
     text-transform: lowercase;
+    position: relative;
 
     .Tabs {
         width: 100%;
@@ -23,7 +24,7 @@ nav {
         height: $width_nav;
         transition: all 3s;
         // cursor: none;
-        pointer-events: all;
+        // pointer-events: all;
         
         & > * {
             opacity: 0;

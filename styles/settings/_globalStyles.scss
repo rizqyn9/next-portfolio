@@ -20,7 +20,13 @@
 }
 
 .page_container{
-    box-sizing: content-box;
-    width: 100%;
-    height: 100vh;
+    box-sizing: content-box; 
+    flex: 1;
+    // background-color: red;
+}
+
+.text-reveal{
+    font-size: .9em;
+    // color: red;
+    margin-bottom: .3em;
 }

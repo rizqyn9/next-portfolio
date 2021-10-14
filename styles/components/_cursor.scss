@@ -1,25 +1,67 @@
 body{
-    // cursor: none;
+    cursor: none;
+    & > * {
+        cursor: none;
+        
+    }
 }
-.cursor {
-    width: 5rem;
-    height: 5rem;
+
+.cursor-large {
+    // pointer-events: none;
+    // width: $cursor-large;
+    // height: $cursor-large;
+    // border-radius: 50%;
+	// position: absolute;
+	// left: 0;
+	// top: 0;
+	// pointer-events: none !important;
+	// z-index: 200;
+    // transform: translate($cursor-large, $cursor-large);
+    display: block;
     border: 3px solid $color2;
-	position: absolute;
-	left: 0;
-	top: 0;
-	pointer-events: none !important;
-	z-index: 200;
     background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $cursor-large;
+    height: $cursor-large;
+    border-radius: 50%;
+    // background-color: $color7;
+    z-index: 999;
+    pointer-events: none;
+    mix-blend-mode: difference;
+
+    &.hover-work{
+        // display: inline-block;
+        // background-color: darkblue;
+        transform: scale(0.9);
+        z-index: 500;
+        transition: all;
+    }
 }
 
 .cursor-small {
+    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
+    pointer-events: none;
+    width: 5rem;
     z-index: 200;
-    pointer-events: none !important;
-    width: .5rem;
-    height: .5rem;
-    top: 0;
-    left: 0;
+    height: 5rem;
+    border-radius: 50%;
+    top: -2.5rem;
+    left: -2.5rem;
     background-color: cyan;
     position: absolute;
+    
+    &.hover-work{
+        // display: inline-block;
+        // background-color: darkblue;
+        transform: scale(5);
+        z-index: 500;
+        transition: all;
+    }
+}
+
+.none-state{
+
 }

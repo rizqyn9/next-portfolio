@@ -1,55 +1,78 @@
-import {SplitChars, Controls, PlayState, Timeline, Tween, Reveal } from 'react-gsap'
-import Container from '../container/container'
-import {Canvas} from '@react-three/fiber'
 import React, {useRef} from 'react'
-import Bubble from '../spher'
+import Title from '../animPart/Title'
 import SkillCanvas from './SkillCanvas'
+import TextReveal from '../animPart/TextReveal'
+import {motion} from 'framer-motion'
+import Head from 'next/head'
 
 
 const Skill = () => {
-    const mesh = useRef()
     return (
         <main className="skills-container">
+            <Head>
+                <title>R-Dev | Skill & Experience</title>
+            </Head>
             <div className="skills-content-container">
-                <div className="skills-title-container __title">
-                    <Tween 
-                        from={{x:'1vw', overflow:'hidden', ease: "power4.out", opacity:0,  backgroundColor:'cyan', borderRadius:'50%'}}
-                        stagger={'.05'}
-                    >
-                        <SplitChars
-                            wrapper={<div className="wrapper" style={{display:'inline-block'}}/>}
-                        >
-                            Skills & Experience.
-                        </SplitChars>
-                    </Tween>
-                </div>
-                <div className="contents-container __content">
-                    <div className="about-contents _content">
-                        Motivated junior web developer looking for a role as full-stack.
-                        The main expertise as front-end development (client-side)
-                    </div>
-                    <div className="about-contents _content">
-                        In web development better to using HTML, CSS, JS, custom plugins, GSAPP, interactive layout and many library
-                    </div>
-                    <div className="about-contents _content">
-                        In apps development focused in C++, C# and Python
-                    </div>
-                    <div className="about-contents _content">
-                        I have also full-stack developer experience with some companies in web and apps development
-                    </div>
-                </div>
-            </div>
-            {/* <Canvas>
-                <mesh 
-        ref={mesh}
+                <Title className="__title">Skills & Experience</Title>
+                <br />
+                <motion.div
+                    className="contents-container __content"
+                    variants = {{
+                        hidden : {
+                            opacity : 0,
+                            fontSize : "1.2rem",
+                        },
+                        visible : {
+                            opacity : 1,
+                            transition : {
+                                staggerChildren : .2
+                            }
+                        }
+                    }}
+                    initial = "hidden"
+                    animate = "visible"
                 >
-                    <Bubble/>
-                    <ambientLight intensity="0.5"/>
-                    <directionalLight color={"cyan"} position={[10, 10, 5]} intensity={5} />
-                    <pointLight color={"darkBlue"} position={[0, -10, 5]} intensity={10} />
-                </mesh>
-            </Canvas> */}
-            <SkillCanvas />
+                    <TextReveal>
+                        As Web Developer, i'm using ReactJS as FrontEnd and some NodeJS framework Express.js or NestJS
+                    </TextReveal>
+                    <TextReveal>
+                        In Game Development better for implementing any logic using Unity and C#
+                    </TextReveal>
+                    <TextReveal>
+                        Have some experience using some DBMS like MongoDB, Postgre, MySQL, Redis and Elastic Search
+                    </TextReveal>
+                    <TextReveal>
+                        Better using any linux distribution and version control
+                    </TextReveal>
+                    <TextReveal>
+                        Have experience to create Unit Testing before Deployment use Jest
+                    </TextReveal>
+                    <TextReveal>
+                        CI/CD for develop and deployment is better for your company
+                    </TextReveal>
+                    <TextReveal>
+                        Now i'm learning as DevOps Enginer, Scalling apps with Docker and Kubernetes
+                    </TextReveal>
+                    <TextReveal>
+
+                    </TextReveal>
+                </motion.div>
+            </div>
+            <motion.div
+                className="skill-canvas-container"
+                initial={{
+                    opacity:0
+                }}
+                animate={{
+                    opacity:1,
+                    transition : {
+                        ease : "easeIn",
+                        duration:2
+                    }
+                }}
+            >
+                <SkillCanvas />
+            </motion.div>
         </main>
     )
 }
