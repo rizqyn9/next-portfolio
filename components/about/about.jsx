@@ -8,10 +8,12 @@ import {MySelf} from '../../dataConfig'
 const About = () => {
     useEffect ( () => {
     }, [])
-    
     return(
-        <main className="about-container">
-            <div className="about-content-container ">       
+        <main className="about-container"
+        >
+            <div className="about-content-container "
+                
+            >      
                 <Title className="__title">About Me</Title>
                 <motion.div
                     className ="__content"
