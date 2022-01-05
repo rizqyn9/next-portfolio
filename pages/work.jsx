@@ -1,10 +1,7 @@
-import WorkPage from '../components/work/work'
+import WorkPage from "../components/work/work";
 
 const Work = () => {
-    return (
-        <WorkPage/>
+	return <WorkPage />;
+};
 
-    )
-}
-
-export default Work
+export default Work;

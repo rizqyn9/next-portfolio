@@ -1,6 +1,7 @@
 import Home from '../components/home/home'
 import {motion} from 'framer-motion'
 import Head from 'next/head'
+import React from 'react'
 // import LoadingPage from '../components/loading/LoadingPage'
 
 export default function index() {
